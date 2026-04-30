@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+body::before, body::after {
+    content: '';
+    position: absolute; /* ← era relative, precisa ser absolute */
+    top: 0;
+    width: 60px;
+    height: 100%;
+    background-image: repeating-conic-gradient(#000 0% 25%, #fff 0% 50%);
+    background-size: 30px 30px;
+    z-index: 998;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+}
+
+body::before { left: 0; }
+body::after  { right: 0; }
+
+body {
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    background: #ddf8fe;
+    color: rgb(210, 36, 36);
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif; 
+    background-image: url('Catalog_Bg.png');
+    background-size: auto;      
+    background-position: center; 
+    background-repeat: repeat;
+}
+
+html {
+    height: 100%;
+}
+
+.externo {
+    width: 1200px;
+    height: 1200px;
+    background-image: url('Catalog_Blue_Panel.png');
+    background-size: 100% 110%;  
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    display: flex;          
+    flex-direction: column; 
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 550px;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.interno {
+    width: 100%;
+    height: auto;
+    margin-top: -490px;
+}
+
+.barra-topo {
+    width: 100%;
+    height: 50px;
+    background-color: #4f7fdf; 
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;           
